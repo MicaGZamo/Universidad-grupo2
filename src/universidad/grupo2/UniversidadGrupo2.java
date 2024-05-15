@@ -1,20 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package universidad.grupo2;
 
-/**
- *
- * @author gomez
- */
+//import org.mariadb.jdbc.Connection;
+import AccesoADatos.Conexion;
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+
 public class UniversidadGrupo2 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+     Connection con = Conexion.getConexion();
     }
     
 }
