@@ -19,6 +19,8 @@ public class Conexion {
             JOptionPane.showMessageDialog(null, "Drivers cargados correctamente ");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Clase Conexion: Error al cargar Driver");
+            System.out.println("error " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
 
@@ -35,6 +37,8 @@ public class Conexion {
             JOptionPane.showMessageDialog(null, "Conexion con base de datos exitosa ");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error de conexion ");
+            System.out.println("error " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return con;

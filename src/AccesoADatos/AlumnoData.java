@@ -39,7 +39,37 @@ public class AlumnoData {
             System.out.println("error " + ex.getMessage());
             ex.printStackTrace();
         }
+    }
 
+    public Alumno buscarAlumno(int id) {
+        Alumno alumno = null;
+        String sql = "SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
+        PreparedStatement ps = null;
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();//busqueda
+
+            if (rs.next()) {
+                alumno = new Alumno();
+                alumno.setIdAlumno(id);
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+
+            } else {
+                 JOptionPane.showMessageDialog(null, "No se encontró el alumno" );
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno ");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }         
         
+        
+        return alumno;
     }
 }
