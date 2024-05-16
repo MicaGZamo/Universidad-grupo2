@@ -17,18 +17,18 @@ public class AlumnoData {
         String sql = "INSERT INTO `alumno`(`dni`, `apellido`, `nombre`, `fechaNacimiento`, `estado`) VALUES (?,?,?,?,?)";
 
         try {
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // generamos los PreparedStatement con las setencias SQL
 
             ps.setInt(1, alumno.getDni());
             ps.setString(2, alumno.getApellido());
             ps.setString(3, alumno.getNombre());
-            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento()));
+            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento())); // localDate a Date
             ps.setBoolean(5, alumno.isEstado());
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
 
-            if (rs.next()) {
+            if (rs.next()) { // pregunta si tiene datos
                 alumno.setIdAlumno(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Alumno cargado correctamente");
             }
@@ -69,7 +69,38 @@ public class AlumnoData {
             e.printStackTrace();
         }         
         
-        
         return alumno;
     }
+    
+    public Alumno buscarAlumnoPorDni(int dni){
+        Alumno alumno = null;
+        String sql = "SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
+        PreparedStatement ps = null;
+        
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();//busqueda
+
+            if (rs.next()) {
+                alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));// podria ser alumno.setDni(dni)?
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+
+            } else {
+                 JOptionPane.showMessageDialog(null, "No se encontró el alumno" );
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno ");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }         
+        
+    return alumno;}
+    
 }
