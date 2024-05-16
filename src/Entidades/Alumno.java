@@ -29,11 +29,12 @@ public class Alumno {
         this.dni = dni;
     }
 
-    public Alumno(String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+    public Alumno(String apellido,int dni,String nombre, LocalDate fechaNacimiento, boolean estado) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.estado = estado;
+        this.dni=dni;
     }
 
     public int getIdAlumno() {
