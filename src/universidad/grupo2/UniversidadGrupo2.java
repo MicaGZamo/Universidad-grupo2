@@ -17,5 +17,5 @@ public class UniversidadGrupo2 {
      Connection con = Conexion.getConexion();
      
      
-    
+    }
 }
