@@ -166,5 +166,28 @@ public class AlumnoData {
         }
 
     }
+    
+    public void darBaja(int id){ // igual eliminarAlumno
+    
+        try {
+        String sql= "UPDATE alumno SET estado = 0 WHERE idAlumno = ? ";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, id);
+        int fila = ps.executeUpdate();
+        
+        if(fila==1){
+            JOptionPane.showMessageDialog(null, "Se dio de baja al alumno con id: "+id);
+        }else{
+            JOptionPane.showMessageDialog(null, "No se dio de baja al alumno con id: "+id);
+        }
+        ps.close();
+        
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar datos");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }
+
+    }
 
 }
