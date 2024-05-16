@@ -8,6 +8,7 @@ import java.beans.Statement;
 import java.sql.Connection;
 import java.sql.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -31,5 +32,11 @@ public class UniversidadGrupo2 {
         System.out.println(ad.buscarAlumno(2));
         System.out.println(ad.buscarAlumnoPorDni(39258123));
         
+        List <Alumno> listadoA= ad.listarAlumnos();
+        System.out.println("--- LISTADO ALUMNOS ---");
+        for (Alumno alumno : listadoA) {
+            System.out.println(alumno);
+            
+        }
     }
 }

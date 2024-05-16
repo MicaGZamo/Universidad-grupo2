@@ -3,6 +3,8 @@ package AccesoADatos;
 //import com.sun.jdi.connect.spi.Connection;
 import Entidades.Alumno;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class AlumnoData {
@@ -60,23 +62,23 @@ public class AlumnoData {
                 alumno.setEstado(true);
 
             } else {
-                 JOptionPane.showMessageDialog(null, "No se encontró el alumno" );
+                JOptionPane.showMessageDialog(null, "No se encontró el alumno");
             }
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno ");
             System.out.println("error " + e.getMessage());
             e.printStackTrace();
-        }         
-        
+        }
+
         return alumno;
     }
-    
-    public Alumno buscarAlumnoPorDni(int dni){
+
+    public Alumno buscarAlumnoPorDni(int dni) {
         Alumno alumno = null;
         String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni=? AND estado = 1";
         PreparedStatement ps = null;
-        
+
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, dni);
@@ -92,15 +94,46 @@ public class AlumnoData {
                 alumno.setEstado(true);
 
             } else {
-                 JOptionPane.showMessageDialog(null, "No se encontró el alumno" );
+                JOptionPane.showMessageDialog(null, "No se encontró el alumno");
             }
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno ");
             System.out.println("error " + e.getMessage());
             e.printStackTrace();
-        }         
-        
-    return alumno;}
-    
+        }
+
+        return alumno;
+    }
+
+    public List<Alumno> listarAlumnos() {
+        List<Alumno> lista = new ArrayList<>();
+        String sql = "SELECT* FROM alumno WHERE estado=1 ";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Alumno alumno = new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
+                alumno.setEstado(true);
+                
+                lista.add(alumno);
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno ");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
+
 }
