@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class Alumno {
 
     private int idAlumno;
+    private int dni;
     private String apellido;
     private String nombre;
     private LocalDate fechaNacimiento;
@@ -19,12 +20,13 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int idAlumno, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+    public Alumno(int idAlumno,int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
         this.idAlumno = idAlumno;
         this.apellido = apellido;
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
         this.estado = estado;
+        this.dni = dni;
     }
 
     public Alumno(String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
@@ -74,6 +76,16 @@ public class Alumno {
         this.estado = estado;
     }
 
+    public int getDni() {
+        return dni;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    
+    
     @Override
     public String toString() {
         return "Alumno{" + "idAlumno=" + idAlumno + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", estado=" + estado + '}';
