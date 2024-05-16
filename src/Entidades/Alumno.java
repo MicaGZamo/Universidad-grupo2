@@ -20,7 +20,7 @@ public class Alumno {
     public Alumno() {
     }
 
-    public Alumno(int idAlumno,int dni, String apellido, String nombre, LocalDate fechaNacimiento, boolean estado) {
+    public Alumno(int idAlumno, String apellido, int dni, String nombre, LocalDate fechaNacimiento, boolean estado) {
         this.idAlumno = idAlumno;
         this.apellido = apellido;
         this.nombre = nombre;

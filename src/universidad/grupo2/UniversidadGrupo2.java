@@ -24,6 +24,7 @@ public class UniversidadGrupo2 {
         LocalDate fecha3 = LocalDate.of(1991, 12, 10);
         Alumno alum3 = new Alumno("Fuentes", 39258123, "Gisela", fecha3, true);
         
+        
         AlumnoData ad = new AlumnoData();
       //  ad.guardarAlumno(alum1);
       //  ad.guardarAlumno(alum2);
@@ -36,7 +37,13 @@ public class UniversidadGrupo2 {
         System.out.println("--- LISTADO ALUMNOS ---");
         for (Alumno alumno : listadoA) {
             System.out.println(alumno);
-            
+         
         }
+      Alumno alum4 = new Alumno(4,"Sanchez", 35874123, "Sofia", fecha3, true); 
+      ad.actualizarAlumno(alum4);
+      
     }
+    
+    
+    
 }

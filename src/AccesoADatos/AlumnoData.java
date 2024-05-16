@@ -31,7 +31,7 @@ public class AlumnoData {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) { // pregunta si tiene datos
-                alumno.setIdAlumno(rs.getInt(1));
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
                 JOptionPane.showMessageDialog(null, "Alumno cargado correctamente");
             }
             ps.close();
@@ -122,7 +122,7 @@ public class AlumnoData {
                 alumno.setNombre(rs.getString("nombre"));
                 alumno.setFechaNacimiento(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setEstado(true);
-                
+
                 lista.add(alumno);
             }
             ps.close();
@@ -134,6 +134,37 @@ public class AlumnoData {
         }
 
         return lista;
+
+    }
+
+    public void actualizarAlumno(Alumno alumno) {
+
+        String sql = "UPDATE alumno SET dni=?, apellido=?, nombre=?, fechaNacimiento=?, estado=? WHERE idAlumno=? ";
+        PreparedStatement ps = null;
+
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, alumno.getDni());
+            ps.setString(2, alumno.getApellido());
+            ps.setString(3, alumno.getNombre());
+            ps.setDate(4, Date.valueOf(alumno.getFechaNacimiento())); // localDate a Date
+            ps.setBoolean(5, alumno.isEstado());
+            ps.setInt(6, alumno.getIdAlumno());
+            
+            
+            int exito = ps.executeUpdate();
+
+            if (exito==1) { // pregunta si tiene datos
+                JOptionPane.showMessageDialog(null, "Datos del alumno actualizados");
+            }
+            ps.close();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar datos");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }
+
     }
 
 }
