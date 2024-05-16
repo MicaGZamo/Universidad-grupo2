@@ -24,9 +24,12 @@ public class UniversidadGrupo2 {
         Alumno alum3 = new Alumno("Fuentes", 39258123, "Gisela", fecha3, true);
         
         AlumnoData ad = new AlumnoData();
-        ad.guardarAlumno(alum1);
-        ad.guardarAlumno(alum2);
-        ad.guardarAlumno(alum3);
+      //  ad.guardarAlumno(alum1);
+      //  ad.guardarAlumno(alum2);
+        //ad.guardarAlumno(alum3);
 
+        System.out.println(ad.buscarAlumno(2));
+        System.out.println(ad.buscarAlumnoPorDni(39258123));
+        
     }
 }
