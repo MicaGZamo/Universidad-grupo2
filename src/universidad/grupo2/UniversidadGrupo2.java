@@ -60,7 +60,9 @@ public class UniversidadGrupo2 {
 //        md.guardarMateria(mat3);
 
         System.out.println(md.BuscarMateria(2));
-
+        
+        Materia mat4= new Materia("Quimica modificada", 2, true);
+        md.modificarMateria(mat4);
     }
     
 } 

@@ -64,5 +64,32 @@ public class MateriaData {
            e.printStackTrace();
        }
    return materia;}
+   
+   public void modificarMateria(Materia materia){
+   String sql = "UPDATE materia SET nombre=?, año=?, estado=? WHERE idMateria=? ";
+   PreparedStatement ps = null;
+   try{
+       ps = con.prepareStatement(sql);
+       ps.setString(1, materia.getNombre());
+       ps.setInt(2, materia.getAnio());
+       ps.setBoolean(3,materia.isEstado());
+       ps.setInt(4, materia.getIdMateria());
+      
+       
+       int exito = ps.executeUpdate();
+        System.out.println("exito ="+exito);
+       if(exito == 1){ // pregunta si tiene datos
+           JOptionPane.showMessageDialog(null,"Actualizacion exitosa de la materia");
+       }
+       ps.close();
+       
+   
+   }catch(SQLException e){
+       JOptionPane.showMessageDialog(null, "Error al actualizar los datos de la materia ");
+       System.out.println("error "+e.getMessage());
+       e.printStackTrace();
+   }
+       
+   }
     
 }
