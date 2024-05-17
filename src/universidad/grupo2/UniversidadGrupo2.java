@@ -55,9 +55,12 @@ public class UniversidadGrupo2 {
         
         MateriaData md = new MateriaData();
         
-        md.guardarMateria(mat1);
-        md.guardarMateria(mat2);
-        md.guardarMateria(mat3);
+//        md.guardarMateria(mat1);
+//        md.guardarMateria(mat2);
+//        md.guardarMateria(mat3);
+
+        System.out.println(md.BuscarMateria(2));
+
     }
     
 } 

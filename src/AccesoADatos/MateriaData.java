@@ -39,5 +39,30 @@ public class MateriaData {
         }
             
    }
+   
+   public Materia BuscarMateria(int id){
+       Materia materia = null;
+       String sql = "SELECT idMateria, nombre, año, estado FROM materia WHERE idMateria=?";
+       PreparedStatement  ps = null;
+       try{
+           ps = con.prepareStatement(sql);
+           ps.setInt(1, id);
+           ResultSet rs = ps.executeQuery(); // busqueda
+           
+           if(rs.next()){
+               materia = new Materia();
+               materia.setIdMateria(id);
+               materia.setNombre(rs.getString("nombre"));
+               materia.setAnio(rs.getInt("año"));
+               materia.setEstado(rs.getBoolean("estado"));
+               
+           }
+       
+       }catch(SQLException e){
+           JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia");
+           System.out.println("error"+e);
+           e.printStackTrace();
+       }
+   return materia;}
     
 }
