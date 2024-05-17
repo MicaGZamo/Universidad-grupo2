@@ -48,8 +48,8 @@ public class UniversidadGrupo2 {
       
         //Creacion objetos Materias
         
-        Materia mat1= new Materia("Matematica", 1, true);
-        Materia mat2= new Materia("Literatura", 1, true);
+//        Materia mat1= new Materia("Matematica", 1, true);
+//        Materia mat2= new Materia("Literatura", 1, true);
         Materia mat3= new Materia("Quimica", 2, true);
         //Agregar esas materias a la tabla
         
@@ -61,8 +61,9 @@ public class UniversidadGrupo2 {
 
         System.out.println(md.BuscarMateria(2));
         
-        Materia mat4= new Materia("Quimica modificada", 2, true);
+        Materia mat4= new Materia(1,"Matematica", 2, true);
         md.modificarMateria(mat4);
+      //  md.darBajaMateria(1);
     }
     
 } 
