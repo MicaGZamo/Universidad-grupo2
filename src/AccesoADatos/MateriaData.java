@@ -5,6 +5,8 @@ import Entidades.Materia;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 public class MateriaData {
@@ -109,6 +111,36 @@ public class MateriaData {
             System.out.println("error " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    public List<Materia> listarMaterias() {
+
+        List<Materia> listaM = new ArrayList<>();
+        String sql = "SELECT* FROM materia WHERE estado=1 ";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while(rs.next()){
+            Materia materia=new Materia();
+            materia.setIdMateria(rs.getInt("idMateria"));
+            materia.setNombre(rs.getNString("nombre"));
+            materia.setAnio(rs.getInt("año"));
+            materia.setEstado(true);
+            
+            listaM.add(materia);
+            
+            }
+            rs.close();
+            
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la lista materias ");
+            System.out.println("error " + e.getMessage());
+            e.printStackTrace();
+        }
+        return listaM;
     }
 
 }

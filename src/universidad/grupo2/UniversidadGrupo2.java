@@ -27,7 +27,7 @@ public class UniversidadGrupo2 {
 //        Alumno alum3 = new Alumno("Fuentes", 39258123, "Gisela", fecha3, true);
 //        
 //        
-//        AlumnoData ad = new AlumnoData();
+        AlumnoData ad = new AlumnoData();
 //        ad.guardarAlumno(alum1);
 //        ad.guardarAlumno(alum2);
 //        ad.guardarAlumno(alum3);
@@ -41,31 +41,32 @@ public class UniversidadGrupo2 {
 //            System.out.println(alumno);
 //         
 //        }
-     // Alumno alum4 = new Alumno(4,"Sanchez", 35874123, "Sofia", fecha3, true); 
-     // ad.actualizarAlumno(alum4);
-        
+        // Alumno alum4 = new Alumno(4,"Sanchez", 35874123, "Sofia", fecha3, true); 
+        // ad.actualizarAlumno(alum4);
+
 //        ad.darBaja(1);
-      
         //Creacion objetos Materias
-        
-//        Materia mat1= new Materia("Matematica", 1, true);
-//        Materia mat2= new Materia("Literatura", 1, true);
-        Materia mat3= new Materia("Quimica", 2, true);
-        //Agregar esas materias a la tabla
-        
+//        Materia mat1 = new Materia("Matematica", 1, true);
+//        Materia mat2 = new Materia("Literatura", 1, true);
+//        Materia mat3 = new Materia("Quimica", 2, true);
+//        //Agregar esas materias a la tabla
+//
         MateriaData md = new MateriaData();
-        
+//
 //        md.guardarMateria(mat1);
 //        md.guardarMateria(mat2);
 //        md.guardarMateria(mat3);
-
-        System.out.println(md.BuscarMateria(2));
-        
-        Materia mat4= new Materia(1,"Matematica", 2, true);
-        md.modificarMateria(mat4);
-      //  md.darBajaMateria(1);
+//
+//        System.out.println(md.BuscarMateria(2));
+//
+//        Materia mat4 = new Materia(1, "Matematica", 2, true);
+//        md.modificarMateria(mat4);
+        //  md.darBajaMateria(1);
+    
+    List <Materia> listadoMaterias= md.listarMaterias();
+        System.out.println("--- Listado Materias Activas ---");
+    for (Materia materia : listadoMaterias) {
+            System.out.println( materia);
     }
-    
-} 
-    
-
+    }
+}
