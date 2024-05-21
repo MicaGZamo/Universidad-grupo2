@@ -11,13 +11,12 @@ import java.sql.Connection;
 import java.time.LocalDate;
 import java.util.List;
 
-
 public class UniversidadGrupo2 {
 
     public static void main(String[] args) {
         Connection con = Conexion.getConexion();
         LocalDate fecha = LocalDate.of(1997, 05, 10);
-        
+
 //    // Creacion de alumnos    
 //        Alumno alum1 = new Alumno("Silvera", 4781236, "Jose", fecha, true);
 //        LocalDate fecha2 = LocalDate.of(1999, 05, 12);
@@ -76,12 +75,22 @@ public class UniversidadGrupo2 {
             System.out.println(materia);
         }
 
-        InscripcionData id= new InscripcionData();
-        Alumno Juan= ad.buscarAlumno(1);
-        Materia Matematica= md.BuscarMateria(1);
-        
-        Inscripcion in1= new Inscripcion(Juan,Matematica,9);
+        InscripcionData id = new InscripcionData();
+//        Alumno Juan= ad.buscarAlumno(1);
+//        Materia Matematica= md.BuscarMateria(1);
+        Alumno Sofia = ad.buscarAlumno(4);
+        Materia Quimica = md.BuscarMateria(3);
+
+        Inscripcion in1 = new Inscripcion(Sofia, Quimica, 7);
         id.guardarInscripcion(in1);
+
+        // Mostrar inscipciones :    
+        List<Inscripcion> listaInsc = id.listaInscripcion();
+        System.out.println("--- LISTADO INSCRIPCIONES ---");
+        for (Inscripcion lista : listaInsc) {
+            System.out.println(lista);
+
+        }
     }
-       
+
 }
