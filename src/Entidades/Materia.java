@@ -64,7 +64,7 @@ public class Materia {
 
     @Override
     public String toString() {
-        return  "[ID: " + idMateria + "] - [Nombre: " + nombre + "]-[Año: " 
+        return  "[ID: " + idMateria + "] - [Nombre: " + nombre + "]-[Anio: " 
                 + anio + "] - [Estado: " + estado + ']';
     }
    

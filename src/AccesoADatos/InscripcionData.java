@@ -110,4 +110,36 @@ public class InscripcionData {
         return listaInscAlumn;
         
     }
+    
+    public List<Materia> listarMateriasCursadas(int idAlum){
+        List<Materia> materiasPorAlumno = new ArrayList<>();
+        String sql = "SELECT inscripcion.idMateria, nombre, año, estado  "
+                + " FROM inscripcion, materia "
+                + " WHERE inscripcion.idMateria=materia.idMateria "
+                + " AND inscripcion.idAlumno=?;";  
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,idAlum); 
+            ResultSet rs = ps.executeQuery();
+            
+        while (rs.next()) {
+                Materia materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnio(rs.getInt("año"));
+                materia.setEstado(rs.getBoolean("estado"));
+                materiasPorAlumno.add(materia);
+            }
+            ps.close();    
+            
+            
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
+            System.out.println("error" + e);
+            e.printStackTrace();
+        }
+        
+        
+    return materiasPorAlumno;}
+    
 }

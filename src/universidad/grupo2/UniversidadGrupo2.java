@@ -18,12 +18,12 @@ public class UniversidadGrupo2 {
         LocalDate fecha = LocalDate.of(1997, 05, 10);
 
 //    // Creacion de alumnos    
-//        Alumno alum1 = new Alumno("Silvera", 4781236, "Jose", fecha, true);
-//        LocalDate fecha2 = LocalDate.of(1999, 05, 12);
-//        Alumno alum2 = new Alumno("Soza", 4981236, "Julia", fecha2, true);
-//        LocalDate fecha3 = LocalDate.of(1991, 12, 10);
-//        Alumno alum3 = new Alumno("Fuentes", 39258123, "Gisela", fecha3, true);
-//
+        Alumno alum1 = new Alumno("Silvera", 4781236, "Jose", fecha, true);
+        LocalDate fecha2 = LocalDate.of(1999, 05, 12);
+        Alumno alum2 = new Alumno("Soza", 4981236, "Julia", fecha2, true);
+        LocalDate fecha3 = LocalDate.of(1991, 12, 10);
+        Alumno alum3 = new Alumno("Fuentes", 39258123, "Gisela", fecha3, true);
+
 //    // Creacion objeto alumnodata y añadir alumnos a la bs (insert)   
         AlumnoData ad = new AlumnoData();
 //        ad.guardarAlumno(alum1);
@@ -44,7 +44,7 @@ public class UniversidadGrupo2 {
 //
 //        }
 //    // Modificar datos de un alumno (update)    
-//        Alumno alum4 = new Alumno(4, "Sanchez", 35874123, "Sofia", fecha3, true);
+        Alumno alum4 = new Alumno(4, "Sanchez", 35874123, "Sofia", fecha3, true);
 //        ad.actualizarAlumno(alum4);
 //
 //    // Dar de baja un alumno (update)    
@@ -56,7 +56,7 @@ public class UniversidadGrupo2 {
 //        Materia mat3 = new Materia("Quimica", 2, true);
 //
 //     // Agregar esas materias a la tabla
-        MateriaData md = new MateriaData();
+//        MateriaData md = new MateriaData();
 //        md.guardarMateria(mat1);
 //        md.guardarMateria(mat2);
 //        md.guardarMateria(mat3);
@@ -80,9 +80,9 @@ public class UniversidadGrupo2 {
 //        Materia Matematica = md.BuscarMateria(1);
 //        Alumno Sofia = ad.buscarAlumno(4);
 //        Materia Quimica = md.BuscarMateria(3);
-
-       // Inscripcion in1 = new Inscripcion(Sofia, Quimica, 7);
-       // id.guardarInscripcion(in1);
+//
+//        Inscripcion in1 = new Inscripcion(Sofia, Quimica, 7);
+//        id.guardarInscripcion(in1);
 
         // Mostrar inscipciones :    
 //        List<Inscripcion> listaInsc = id.listaInscripcion();
@@ -92,13 +92,22 @@ public class UniversidadGrupo2 {
 //
 //        }
         
-         List<Inscripcion> listaInscAlumno = id.listarInscripcionesPorAlumno(4);
-        System.out.println("--- LISTADO INSCRIPCIONES POR ALUMNO ---");
-        for (Inscripcion lista : listaInscAlumno) {
+//         List<Inscripcion> listaInscAlumno = id.listarInscripcionesPorAlumno(4);
+//        System.out.println("--- LISTADO INSCRIPCIONES POR ALUMNO ---");
+//        for (Inscripcion lista : listaInscAlumno) {
+//            System.out.println(lista);
+
+//        }
+        
+        
+        List<Materia> listadeMaterias = id.listarMateriasCursadas(4);
+        System.out.println("--- LISTADO DE MATERIAS POR ALUMNO ---");
+        for (Materia lista : listadeMaterias) {
             System.out.println(lista);
 
         }
         
     }
+    
 
 }
