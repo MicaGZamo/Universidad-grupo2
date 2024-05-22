@@ -185,7 +185,7 @@ public class InscripcionData {
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion");
             System.out.println("error" + e);
             e.printStackTrace();
         }
@@ -206,11 +206,44 @@ public class InscripcionData {
             }
             ps.close();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion");
             System.out.println("error" + e);
             e.printStackTrace();
         }
 
     }
+    
+    public List<Alumno> obtenerAlumnosPorMateria (int idMateria){
+        ArrayList<Alumno> alumnos = new ArrayList<>();
+        String sql="SELECT a.idAlumno, dni, nombre, apellido, estado "
+                 + " FROM inscripcion i, alumno a "
+                 + " WHERE i.idAlumno=a.idAlumno "
+                 + " AND idMateria=? AND a.estado=1";
+      
+     try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idMateria);
+            ResultSet rs = ps.executeQuery();
+            
+            
+            while (rs.next()) { //si pudo hacer consulta 
+                Alumno alumno= new Alumno();
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
+                alumno.setDni(rs.getInt("dni"));
+                alumno.setNombre(rs.getString("nombre"));
+                alumno.setApellido(rs.getString("apellido"));
+                alumno.setEstado(rs.getBoolean("estado"));
+                alumnos.add(alumno);
+            }
+            ps.close();
+            
+    }catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o alumno");
+            System.out.println("error" + e);
+            e.printStackTrace();
+        }
+        
+        
+    return alumnos;}
 
 }

@@ -116,6 +116,14 @@ public class UniversidadGrupo2 {
         
       // id.borrarInscripcion(1, 1);
         id.actualizarNota(4, 3, 10);
+        
+        List<Alumno> listadeMaterias3 = id.obtenerAlumnosPorMateria(3);
+        System.out.println("--- LISTADO DE ALUMNOS POR MATERIA ---");
+        for (Alumno lista : listadeMaterias3) {
+            System.out.println(lista);
+
+        }
+        
     }
     
 
