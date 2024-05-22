@@ -142,4 +142,9 @@ public class InscripcionData {
         
     return materiasPorAlumno;}
     
+    public List<Materia> listarMateriasNoCursadas (int idAlum){
+    return;}
+    
+    
+    
 }
