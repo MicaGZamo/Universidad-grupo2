@@ -114,8 +114,8 @@ public class UniversidadGrupo2 {
 //
 //        }
         
-       id.borrarInscripcion(1, 1);
-        
+      // id.borrarInscripcion(1, 1);
+        id.actualizarNota(4, 3, 10);
     }
     
 

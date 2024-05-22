@@ -183,7 +183,28 @@ public class InscripcionData {
             if (filas > 0) {
                 JOptionPane.showMessageDialog(null, "Se borró la inscripción correctamente.");
             }
+            ps.close();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
+            System.out.println("error" + e);
+            e.printStackTrace();
+        }
 
+    }
+
+    public void actualizarNota(int idAlumno, int idMateria, double nota) {
+        String sql = "UPDATE inscripcion SET nota =? WHERE idAlumno = ? AND idMateria =? ";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setDouble(1, nota);
+            ps.setInt(2, idAlumno);
+            ps.setInt(3, idMateria);
+            int filas = ps.executeUpdate();
+
+            if (filas > 0) {
+                JOptionPane.showMessageDialog(null, "Nota actualizada");
+            }
+            ps.close();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
             System.out.println("error" + e);
