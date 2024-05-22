@@ -100,12 +100,21 @@ public class UniversidadGrupo2 {
 //        }
         
         
-        List<Materia> listadeMaterias = id.listarMateriasCursadas(4);
-        System.out.println("--- LISTADO DE MATERIAS POR ALUMNO ---");
-        for (Materia lista : listadeMaterias) {
+//        List<Materia> listadeMaterias = id.listarMateriasCursadas(4);
+//        System.out.println("--- LISTADO DE MATERIAS POR ALUMNO ---");
+//        for (Materia lista : listadeMaterias) {
+//            System.out.println(lista);
+//
+//        }
+        
+        List<Materia> listadeMaterias2 = id.listarMateriasNoCursadas(4);
+        System.out.println("--- LISTADO DE MATERIAS NO CURSADAS POR ALUMNO ---");
+        for (Materia lista : listadeMaterias2) {
             System.out.println(lista);
 
         }
+        
+        
         
     }
     

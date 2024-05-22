@@ -142,8 +142,34 @@ public class InscripcionData {
         
     return materiasPorAlumno;}
     
+    
     public List<Materia> listarMateriasNoCursadas (int idAlum){
-    return;}
+        ArrayList<Materia> materias = new ArrayList<>();
+        
+        String sql = "SELECT * FROM materia WHERE estado =1 AND idMateria not in"
+                +"(SELECT idMateria FROM inscripcion WHERE idAlumno = ?)";
+    try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,idAlum); 
+            ResultSet rs = ps.executeQuery();
+            
+        while (rs.next()) { //si pudo hacer consulta 
+                Materia materia = new Materia();
+                materia.setIdMateria(rs.getInt("idMateria"));
+                materia.setNombre(rs.getString("nombre"));
+                materia.setAnio(rs.getInt("año"));
+                materia.setEstado(rs.getBoolean("estado"));
+                materias.add(materia);
+            }
+            ps.close();    
+            
+    }catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Inscripcion y/o materia");
+            System.out.println("error" + e);
+            e.printStackTrace();
+        }    
+        
+    return materias;}
     
     
     
