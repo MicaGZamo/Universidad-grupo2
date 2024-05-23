@@ -12,7 +12,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu1">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/universidad/grupo2/RECURSOS/imagenes/alumno.png"/>
+              <Image iconType="3" name="/universidad/grupo2/RECURSOS/alumno.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Alumno"/>
           </Properties>
@@ -30,7 +30,7 @@
         <Menu class="javax.swing.JMenu" name="jFMateria">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/universidad/grupo2/RECURSOS/imagenes/libro(16px).png"/>
+              <Image iconType="3" name="/universidad/grupo2/RECURSOS/libro(16px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Materia"/>
           </Properties>
@@ -45,7 +45,7 @@
         <Menu class="javax.swing.JMenu" name="jInscripcion">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/universidad/grupo2/RECURSOS/imagenes/administracion(12px).png"/>
+              <Image iconType="3" name="/universidad/grupo2/RECURSOS/administracion(12px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Administraci&#xf3;n"/>
           </Properties>
@@ -65,7 +65,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/universidad/grupo2/RECURSOS/imagenes/consultas(12px).png"/>
+              <Image iconType="3" name="/universidad/grupo2/RECURSOS/consultas(12px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Consultas"/>
           </Properties>
@@ -80,7 +80,7 @@
         <Menu class="javax.swing.JMenu" name="jMSalir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/universidad/grupo2/RECURSOS/imagenes/salir(16px).png"/>
+              <Image iconType="3" name="/universidad/grupo2/RECURSOS/salir(16px).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Salir"/>
           </Properties>

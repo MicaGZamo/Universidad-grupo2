@@ -50,7 +50,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(0, 102, 102));
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/alumno.png"))); // NOI18N
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/alumno.png"))); // NOI18N
         jMenu1.setText("Alumno");
 
         jMAlumno.setText("Formulario de Alumno");
@@ -63,7 +63,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jFMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/libro(16px).png"))); // NOI18N
+        jFMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/libro(16px).png"))); // NOI18N
         jFMateria.setText("Materia");
 
         jMMateria.setText("Formulario Materia");
@@ -71,7 +71,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jFMateria);
 
-        jInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/administracion(12px).png"))); // NOI18N
+        jInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/administracion(12px).png"))); // NOI18N
         jInscripcion.setText("Administración");
 
         jMInscripcion.setText("Inscripciones");
@@ -82,7 +82,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jInscripcion);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/consultas(12px).png"))); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/consultas(12px).png"))); // NOI18N
         jMenu4.setText("Consultas");
 
         jMConsultas.setText("Alumnos por Materia");
@@ -90,7 +90,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/salir(16px).png"))); // NOI18N
+        jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/salir(16px).png"))); // NOI18N
         jMSalir.setText("Salir");
         jMenuBar1.add(jMSalir);
 
