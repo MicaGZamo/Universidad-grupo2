@@ -36,19 +36,26 @@ public class Menu extends javax.swing.JFrame {
         jMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setFocusable(false);
+
+        jDEscritorio.setAutoscrolls(true);
+        jDEscritorio.setDoubleBuffered(true);
+        jDEscritorio.setPreferredSize(new java.awt.Dimension(500, 350));
+        jDEscritorio.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jDEscritorioLayout = new javax.swing.GroupLayout(jDEscritorio);
         jDEscritorio.setLayout(jDEscritorioLayout);
         jDEscritorioLayout.setHorizontalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 523, Short.MAX_VALUE)
         );
         jDEscritorioLayout.setVerticalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 329, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 102, 102));
+        jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/alumno.png"))); // NOI18N
         jMenu1.setText("Alumno");
@@ -100,14 +107,20 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDEscritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDEscritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        jDEscritorio.getAccessibleContext().setAccessibleDescription("");
+        jDEscritorio.getAccessibleContext().setAccessibleParent(jMAlumno);
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAlumnoActionPerformed
@@ -116,7 +129,7 @@ public class Menu extends javax.swing.JFrame {
         jDEscritorio.repaint();// repintamos
         FormularioAlumno alumno = new FormularioAlumno(); // creamos una instancia de la vista
         alumno.setVisible(true); // el formulario alumno lo hacemos visible
-        alumno.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        alumno.getContentPane().setBackground(new Color(90,17,102)); // Color de fondo del panel
         jDEscritorio.add(alumno); // agrega al escritorio al jdesktoppane
         
     }//GEN-LAST:event_jMAlumnoActionPerformed
