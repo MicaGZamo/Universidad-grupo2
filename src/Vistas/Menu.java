@@ -1,6 +1,8 @@
 
 package Vistas;
 
+import java.awt.Color;
+
 
 public class Menu extends javax.swing.JFrame {
 
@@ -113,6 +115,10 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
         jDEscritorio.removeAll();//removemos todos los componentes 
         jDEscritorio.repaint();// repintamos
+        FormularioAlumno alumno = new FormularioAlumno(); // creamos una instancia de la vista
+        alumno.setVisible(true); // el formulario alumno lo hacemos visible
+        alumno.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        jDEscritorio.add(alumno); // agrega al escritorio al jdesktoppane
         
     }//GEN-LAST:event_jMAlumnoActionPerformed
 
