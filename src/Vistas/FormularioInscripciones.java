@@ -2,9 +2,9 @@
 package Vistas;
 
 
-public class Inscripciones extends javax.swing.JInternalFrame {
+public class FormularioInscripciones extends javax.swing.JInternalFrame {
 
-    public Inscripciones() {
+    public FormularioInscripciones() {
         initComponents();
     }
 
@@ -14,7 +14,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jCBAlumnos = new javax.swing.JComboBox<String>();
+        jCBAlumnos = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jCheckBMatInsc = new javax.swing.JCheckBox();
@@ -27,7 +27,7 @@ public class Inscripciones extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Seleccione un alumno");
 
-        jCBAlumnos.setModel(new javax.swing.DefaultComboBoxModel<String>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBAlumnos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel2.setText("Formulario de Inscripcion");
 

@@ -2,12 +2,12 @@
 package Vistas;
 
 
-public class Alumno extends javax.swing.JInternalFrame {
+public class FormularioAlumno extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Materia
      */
-    public Alumno() {
+    public FormularioAlumno() {
         initComponents();
     }
 
@@ -62,7 +62,7 @@ public class Alumno extends javax.swing.JInternalFrame {
 
         jLabel6.setText("Nombre:");
 
-        jLabel7.setText("Estado");
+        jLabel7.setText("Estado:");
 
         jRBestado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

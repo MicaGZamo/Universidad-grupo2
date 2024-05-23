@@ -39,13 +39,14 @@ public class Menu extends javax.swing.JFrame {
         jDEscritorio.setLayout(jDEscritorioLayout);
         jDEscritorioLayout.setHorizontalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 409, Short.MAX_VALUE)
         );
         jDEscritorioLayout.setVerticalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 277, Short.MAX_VALUE)
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/alumno.png"))); // NOI18N
         jMenu1.setText("Alumno");
 
         jMAlumno.setText("Formulario de Alumno");
@@ -58,6 +59,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jFMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/libro(16px).png"))); // NOI18N
         jFMateria.setText("Materia");
 
         jMMateria.setText("Formulario Materia");
@@ -65,6 +67,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jFMateria);
 
+        jInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/administracion(12px).png"))); // NOI18N
         jInscripcion.setText("Administración");
 
         jMInscripcion.setText("Inscripciones");
@@ -75,6 +78,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jInscripcion);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/consultas(12px).png"))); // NOI18N
         jMenu4.setText("Consultas");
 
         jMConsultas.setText("Alumnos por Materia");
@@ -82,6 +86,7 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
+        jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/salir(16px).png"))); // NOI18N
         jMSalir.setText("Salir");
         jMenuBar1.add(jMSalir);
 
