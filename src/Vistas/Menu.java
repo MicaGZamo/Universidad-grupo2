@@ -49,6 +49,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu1.setText("Alumno");
 
         jMAlumno.setText("Formulario de Alumno");
+        jMAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMAlumnoActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMAlumno);
 
         jMenuBar1.add(jMenu1);
@@ -95,6 +100,13 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAlumnoActionPerformed
+        // TODO add your handling code here:
+        jDEscritorio.removeAll();//removemos todos los componentes 
+        jDEscritorio.repaint();// repintamos
+        
+    }//GEN-LAST:event_jMAlumnoActionPerformed
 
     /**
      * @param args the command line arguments

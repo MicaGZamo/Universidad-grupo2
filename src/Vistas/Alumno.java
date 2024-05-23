@@ -46,7 +46,7 @@ public class Alumno extends javax.swing.JInternalFrame {
         jBeliminar = new javax.swing.JButton();
         jBguardar = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDCfechaNacimiento = new com.toedter.calendar.JDateChooser();
 
         jLabel4.setText("jLabel4");
 
@@ -104,7 +104,7 @@ public class Alumno extends javax.swing.JInternalFrame {
         jDesktopPane1.setLayer(jBeliminar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jBguardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jBsalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jDateChooser1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jDCfechaNacimiento, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -158,7 +158,7 @@ public class Alumno extends javax.swing.JInternalFrame {
                                         .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jDCfechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jDesktopPane1Layout.setVerticalGroup(
@@ -181,9 +181,9 @@ public class Alumno extends javax.swing.JInternalFrame {
                     .addComponent(jLabel6)
                     .addComponent(jTnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jRBestado))
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRBestado)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
@@ -194,7 +194,7 @@ public class Alumno extends javax.swing.JInternalFrame {
                             .addComponent(jBeliminar)
                             .addComponent(jBguardar)
                             .addComponent(jBsalir)))
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDCfechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 24, Short.MAX_VALUE))
         );
 
@@ -219,7 +219,14 @@ public class Alumno extends javax.swing.JInternalFrame {
     private void jRBestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRBestadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jRBestadoActionPerformed
-
+    
+    private void limpiarCampos(){
+        jTdocumento.setText("");
+        jTapellido.setText("");
+        jTnombre.setText("");
+        jRBestado.setSelected(true);
+        jDCfechaNacimiento.setDate(new Date());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBbuscar;
@@ -228,7 +235,7 @@ public class Alumno extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBnuevo;
     private javax.swing.JButton jBsalir;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDCfechaNacimiento;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
