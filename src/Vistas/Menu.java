@@ -20,6 +20,7 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ImageIcon icono = new ImageIcon(getClass().getResource("universidadgrupo2/RECURSOS/fondo1.jpg"))
         jDEscritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -45,6 +46,8 @@ public class Menu extends javax.swing.JFrame {
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 277, Short.MAX_VALUE)
         );
+
+        jMenuBar1.setBackground(new java.awt.Color(0, 102, 102));
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/imagenes/alumno.png"))); // NOI18N
         jMenu1.setText("Alumno");
