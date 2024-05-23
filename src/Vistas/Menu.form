@@ -122,9 +122,6 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JDesktopPane" name="jDEscritorio">
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icono = new ImageIcon(getClass().getResource(&quot;universidadgrupo2/RECURSOS/fondo1.jpg&quot;))"/>
-      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
