@@ -58,7 +58,7 @@ public class Inscripcion {
 
     @Override
     public String toString() {
-        return "idInscripcion=" + idInscripcion + ", alumno=" + alumno + ", materia=" + materia + ", nota=" + nota + '}';
+        return "[IDinscripcion: " + idInscripcion + "] - [Alumno: " + alumno + "] - [Materia: " + materia + "] - [Nota: " + nota + ']';
     }
   
   
