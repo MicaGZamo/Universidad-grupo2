@@ -1,6 +1,6 @@
-
 package Vistas;
 
+import java.awt.Color;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -34,18 +34,28 @@ public class Menu extends javax.swing.JFrame {
         jMSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
+        setFocusable(false);
+
+        jDEscritorio.setAutoscrolls(true);
+        jDEscritorio.setDoubleBuffered(true);
+        jDEscritorio.setPreferredSize(new java.awt.Dimension(500, 350));
+        jDEscritorio.setRequestFocusEnabled(false);
 
         javax.swing.GroupLayout jDEscritorioLayout = new javax.swing.GroupLayout(jDEscritorio);
         jDEscritorio.setLayout(jDEscritorioLayout);
         jDEscritorioLayout.setHorizontalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 523, Short.MAX_VALUE)
         );
         jDEscritorioLayout.setVerticalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 329, Short.MAX_VALUE)
         );
 
+        jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
+
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/alumno.png"))); // NOI18N
         jMenu1.setText("Alumno");
 
         jMAlumno.setText("Formulario de Alumno");
@@ -58,30 +68,59 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
+        jFMateria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/libro(16px).png"))); // NOI18N
         jFMateria.setText("Materia");
+        jFMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFMateriaActionPerformed(evt);
+            }
+        });
 
         jMMateria.setText("Formulario Materia");
+        jMMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMMateriaActionPerformed(evt);
+            }
+        });
         jFMateria.add(jMMateria);
 
         jMenuBar1.add(jFMateria);
 
+        jInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/administracion(12px).png"))); // NOI18N
         jInscripcion.setText("Administración");
 
         jMInscripcion.setText("Inscripciones");
+        jMInscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMInscripcionActionPerformed(evt);
+            }
+        });
         jInscripcion.add(jMInscripcion);
 
         jMNotas.setText("Notas");
+        jMNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMNotasActionPerformed(evt);
+            }
+        });
         jInscripcion.add(jMNotas);
 
         jMenuBar1.add(jInscripcion);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/consultas(12px).png"))); // NOI18N
         jMenu4.setText("Consultas");
 
         jMConsultas.setText("Alumnos por Materia");
+        jMConsultas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMConsultasActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMConsultas);
 
         jMenuBar1.add(jMenu4);
 
+        jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/salir(16px).png"))); // NOI18N
         jMSalir.setText("Salir");
         jMenuBar1.add(jMSalir);
 
@@ -91,22 +130,75 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDEscritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jDEscritorio, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
+        jDEscritorio.getAccessibleContext().setAccessibleDescription("");
+
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMAlumnoActionPerformed
         // TODO add your handling code here:
         jDEscritorio.removeAll();//removemos todos los componentes 
         jDEscritorio.repaint();// repintamos
-        
+        FormularioAlumno alumno = new FormularioAlumno(); // creamos una instancia de la vista
+        alumno.setVisible(true); // el formulario alumno lo hacemos visible
+        alumno.getContentPane().setBackground(new Color(90, 17, 102)); // Color de fondo del panel
+        jDEscritorio.add(alumno); // agrega al escritorio al jdesktoppane
+
     }//GEN-LAST:event_jMAlumnoActionPerformed
+
+    private void jFMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFMateriaActionPerformed
+
+    }//GEN-LAST:event_jFMateriaActionPerformed
+
+    private void jMMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMMateriaActionPerformed
+        jDEscritorio.removeAll();//removemos todos los componentes 
+        jDEscritorio.repaint();// repintamos
+        FormularioMateria materia = new FormularioMateria(); // creamos una instancia de la vista
+        materia.setVisible(true); // el formulario alumno lo hacemos visible
+        //materia.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        jDEscritorio.add(materia); // agrega al escritorio al jdesktoppane
+
+    }//GEN-LAST:event_jMMateriaActionPerformed
+
+    private void jMNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMNotasActionPerformed
+        jDEscritorio.removeAll();//removemos todos los componentes 
+        jDEscritorio.repaint();// repintamos
+        FormularioNotas notas = new FormularioNotas(); // creamos una instancia de la vista
+        notas.setVisible(true); // el formulario alumno lo hacemos visible
+        //materia.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        jDEscritorio.add(notas); // agrega al escritorio al jdesktoppane
+
+    }//GEN-LAST:event_jMNotasActionPerformed
+
+    private void jMInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMInscripcionActionPerformed
+        jDEscritorio.removeAll();//removemos todos los componentes 
+        jDEscritorio.repaint();// repintamos
+        FormularioInscripciones insc = new FormularioInscripciones(); // creamos una instancia de la vista
+        insc.setVisible(true); // el formulario alumno lo hacemos visible
+        //materia.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        jDEscritorio.add(insc); // agrega al escritorio al jdesktoppane
+    }//GEN-LAST:event_jMInscripcionActionPerformed
+
+    private void jMConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMConsultasActionPerformed
+        jDEscritorio.removeAll();//removemos todos los componentes 
+        jDEscritorio.repaint();// repintamos
+        FormularioConsultas consulta = new FormularioConsultas(); // creamos una instancia de la vista
+        consulta.setVisible(true); // el formulario alumno lo hacemos visible
+        //materia.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
+        jDEscritorio.add(consulta); // agrega al escritorio al jdesktoppane
+    }//GEN-LAST:event_jMConsultasActionPerformed
 
     /**
      * @param args the command line arguments

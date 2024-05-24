@@ -30,9 +30,9 @@ public class InscripcionData {
             ps.setInt(2, insc.getAlumno().getIdAlumno());
             ps.setInt(3, insc.getMateria().getIdMateria());
             ps.executeUpdate();
-            ResultSet rs = ps.getGeneratedKeys();
-            if (rs.next()) {
-                insc.setIdInscripcion(rs.getInt(1));
+            ResultSet rs = ps.getGeneratedKeys();// devuelve la claves de las inscripciones agregadas
+            if (rs.next()) { // si hay claves
+                insc.setIdInscripcion(rs.getInt(1)); // el "1" es la columna 1 donde estan las ID de inscripción
                 JOptionPane.showMessageDialog(null, "Inscripción hecha correctamente");
             }
             ps.close();

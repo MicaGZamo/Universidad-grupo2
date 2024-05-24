@@ -8,12 +8,12 @@ package Vistas;
  *
  * @author gomez
  */
-public class Notas extends javax.swing.JInternalFrame {
+public class FormularioNotas extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Administracion
      */
-    public Notas() {
+    public FormularioNotas() {
         initComponents();
     }
 
