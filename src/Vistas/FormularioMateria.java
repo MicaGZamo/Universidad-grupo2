@@ -64,6 +64,11 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         });
 
         jbEliminar.setText("Eliminar");
+        jbEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbEliminarActionPerformed(evt);
+            }
+        });
 
         jbGuardar.setText("Guardar");
         jbGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +248,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
         
         try{
-          Integer id = Integer.parseInt(jtId.getText());
+      
           String nombre = jtNombre.getText();
           Integer anio1 = Integer.parseInt(jtAnio.getText());
           
@@ -256,11 +261,23 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
           if(materiaActual==null){
               materiaActual = new Materia(nombre, anio1, estado);
               materiaData.guardarMateria(materiaActual);
-          }
+          }else{
+           materiaActual.setNombre(nombre);
+           materiaActual.setAnio(anio1);
+           materiaData.modificarMateria(materiaActual);
+         }
+        
         }catch (NumberFormatException n) {
-            JOptionPane.showMessageDialog(this, "Debe ingresar un DNI válido."); 
+            JOptionPane.showMessageDialog(this, "Debe ingresar un año válido."); 
         }
     }//GEN-LAST:event_jbGuardarActionPerformed
+
+    private void jbEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEliminarActionPerformed
+         if (materiaActual != null) {
+            materiaData.darBajaMateria(materiaActual.getIdMateria());
+            limpiarCampos();
+        }
+    }//GEN-LAST:event_jbEliminarActionPerformed
 
     private void limpiarCampos() {
         jtId.setText("");
