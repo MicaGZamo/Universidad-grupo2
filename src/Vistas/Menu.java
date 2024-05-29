@@ -46,11 +46,11 @@ public class Menu extends javax.swing.JFrame {
         jDEscritorio.setLayout(jDEscritorioLayout);
         jDEscritorioLayout.setHorizontalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 523, Short.MAX_VALUE)
+            .addGap(0, 557, Short.MAX_VALUE)
         );
         jDEscritorioLayout.setVerticalGroup(
             jDEscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 329, Short.MAX_VALUE)
+            .addGap(0, 436, Short.MAX_VALUE)
         );
 
         jMenuBar1.setBackground(new java.awt.Color(51, 51, 51));
@@ -131,14 +131,14 @@ public class Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jDEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 557, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDEscritorio, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jDEscritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jDEscritorio.getAccessibleContext().setAccessibleDescription("");

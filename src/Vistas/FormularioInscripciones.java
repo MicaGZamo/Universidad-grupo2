@@ -195,10 +195,10 @@ public class FormularioInscripciones extends javax.swing.JInternalFrame {
                     .addComponent(jcbMatInsc)
                     .addComponent(jcbMatNoInsc))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbInscribir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                    .addComponent(jbInscribir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jbSalir)
                         .addComponent(jbAnularInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -232,8 +232,8 @@ public class FormularioInscripciones extends javax.swing.JInternalFrame {
         borrarFilaTabla();
         jcbMatNoInsc.setSelected(false);
         cargarDatosInscriptas();
-        jbInscribir.setEnabled(true);
-        jbAnularInscripcion.setEnabled(false);
+        jbInscribir.setEnabled(false);
+        jbAnularInscripcion.setEnabled(true);
         
         
     }//GEN-LAST:event_jcbMatInscActionPerformed
@@ -247,8 +247,8 @@ public class FormularioInscripciones extends javax.swing.JInternalFrame {
         borrarFilaTabla();
         jcbMatNoInsc.setSelected(false);
         cargarDatosNoInscriptas();
-        jbInscribir.setEnabled(false);
-        jbAnularInscripcion.setEnabled(true);
+        jbInscribir.setEnabled(true);
+        jbAnularInscripcion.setEnabled(false);
     }//GEN-LAST:event_jcbMatNoInscActionPerformed
 
     private void jbInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbInscribirActionPerformed

@@ -78,6 +78,11 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
         });
 
         jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("ID");
 
@@ -278,6 +283,10 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
             limpiarCampos();
         }
     }//GEN-LAST:event_jbEliminarActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
 
     private void limpiarCampos() {
         jtId.setText("");
