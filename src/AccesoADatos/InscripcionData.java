@@ -141,7 +141,7 @@ public class InscripcionData {
         return materiasPorAlumno;
     }
 
-    public List<Materia> listarMateriasNoCursadas(int idAlum) {
+    public ArrayList<Materia> listarMateriasNoCursadas(int idAlum) {
         ArrayList<Materia> materias = new ArrayList<>();
 
         String sql = "SELECT * FROM materia WHERE estado =1 AND idMateria not in"
