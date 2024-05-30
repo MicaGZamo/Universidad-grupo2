@@ -269,6 +269,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
           }else{
            materiaActual.setNombre(nombre);
            materiaActual.setAnio(anio1);
+           materiaActual.setEstado(estado);
            materiaData.modificarMateria(materiaActual);
          }
         

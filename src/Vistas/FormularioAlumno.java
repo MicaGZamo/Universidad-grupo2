@@ -301,6 +301,7 @@ public class FormularioAlumno extends javax.swing.JInternalFrame {
                 alumnoActual.setApellido(apellido);
                 alumnoActual.setNombre(nombre);
                 alumnoActual.setFechaNacimiento(FechaNacimiento);
+                alumnoActual.setEstado(estado);
                 alumnoData.actualizarAlumno(alumnoActual);
             }
 
