@@ -4,6 +4,7 @@ import AccesoADatos.AlumnoData;
 import AccesoADatos.InscripcionData;
 import AccesoADatos.MateriaData;
 import Entidades.Alumno;
+import Entidades.Inscripcion;
 import Entidades.Materia;
 import java.util.ArrayList;
 import java.util.List;
@@ -180,10 +181,10 @@ private void armarCabeceraTabla() {
   }
      private void cargarAlumnosInscriptos(){
         Alumno selec = (Alumno) jcbAlumnos.getSelectedItem();
-        List<Materia> lista = inscData.listarMateriasCursadas(selec.getIdMateria());
+        List<Inscripcion> lista = inscData.listaInscripcion(selec.getIdAlumno());
         
-        for (Materia m : lista) {
-            modelo.addRow(new Object[] {m.getIdAlumno(),a.getDni(), a.getNombre(), a.getApellido(), a.isEstado()});
+        for (Inscripcion i : lista) {
+            modelo.addRow(new Object[] {});
         }
     }
 
