@@ -83,8 +83,8 @@ public class Alumno {
     
     @Override
     public String toString() {
-        return  "[ID: " + idAlumno + "]-[Apellido: " + apellido + "]-[Nombre: " + nombre +
-                "]-[Fecha Nacimiento: " + fechaNacimiento + "]-[Estado: " + estado + ']';
+        return   dni +" - "+ idAlumno +" - "+apellido +" - "+ nombre;
+              
     }
     
     

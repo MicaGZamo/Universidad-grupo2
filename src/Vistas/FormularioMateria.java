@@ -221,7 +221,7 @@ public class FormularioMateria extends javax.swing.JInternalFrame {
             .addComponent(jDesktopPane2, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        pack();
+        setBounds(35, 50, 494, 342);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jrbEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbEstadoActionPerformed
