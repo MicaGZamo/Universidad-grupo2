@@ -252,7 +252,7 @@ public class FormularioInscripciones extends javax.swing.JInternalFrame {
     private void jcbMatNoInscActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMatNoInscActionPerformed
 
         borrarFilaTabla();
-        jcbMatNoInsc.setSelected(false);
+        jcbMatInsc.setSelected(false);
         cargarDatosNoInscriptas();
         jbInscribir.setEnabled(true);
         jbAnularInscripcion.setEnabled(false);

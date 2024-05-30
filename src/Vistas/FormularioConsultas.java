@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
+
 package Vistas;
 
 import AccesoADatos.AlumnoData;
@@ -13,10 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author gomez
- */
+
 public class FormularioConsultas extends javax.swing.JInternalFrame {
     private List<Materia> listaM;
     private ArrayList<Alumno> listaA;
@@ -27,7 +21,7 @@ public class FormularioConsultas extends javax.swing.JInternalFrame {
 
     public FormularioConsultas() {
         initComponents();
-         mData = new MateriaData();
+        mData = new MateriaData();
         aData = new AlumnoData();
         listaM = (ArrayList<Materia>) mData.listarMaterias();
         listaA = (ArrayList<Alumno>) aData.listarAlumnos();
