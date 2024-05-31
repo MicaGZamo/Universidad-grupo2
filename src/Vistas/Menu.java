@@ -123,6 +123,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/salir(16px).png"))); // NOI18N
         jMSalir.setText("Salir");
+        jMSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMSalirMouseClicked(evt);
+            }
+        });
         jMSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMSalirActionPerformed(evt);
@@ -210,9 +215,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMConsultasActionPerformed
 
     private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
-        System.out.println("Cerrando ventana...");
-        dispose();
+
     }//GEN-LAST:event_jMSalirActionPerformed
+
+    private void jMSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMSalirMouseClicked
+        // TODO add your handling code here:
+        System.out.println("Cerrando ventana...");
+        dispose(); // o System.exit(0);
+        //System.exit(0);
+    }//GEN-LAST:event_jMSalirMouseClicked
 
     /**
      * @param args the command line arguments
