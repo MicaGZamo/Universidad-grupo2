@@ -1,6 +1,7 @@
 package Vistas;
 
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
 public class Menu extends javax.swing.JFrame {
 
@@ -199,6 +200,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMInscripcionActionPerformed
 
     private void jMConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMConsultasActionPerformed
+        System.out.println("en consultas");
         jDEscritorio.removeAll();//removemos todos los componentes 
         jDEscritorio.repaint();// repintamos
         FormularioConsultas consulta = new FormularioConsultas(); // creamos una instancia de la vista
@@ -208,7 +210,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMConsultasActionPerformed
 
     private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
-       dispose();
+        System.out.println("Cerrando ventana...");
+        dispose();
     }//GEN-LAST:event_jMSalirActionPerformed
 
     /**

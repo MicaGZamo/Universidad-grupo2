@@ -170,9 +170,9 @@ public class FormularioNotas extends javax.swing.JInternalFrame {
 
     private void jbGuardarNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarNActionPerformed
         Alumno selecAlumno = (Alumno) jcbAlumnos.getSelectedItem();
-        int selecID= (int)jTablaNotas.getValueAt(jTablaNotas.getSelectedRow()  , 0);
+        int selecIDmateria= (int)jTablaNotas.getValueAt(jTablaNotas.getSelectedRow()  , 0);
         double selecNota= Double.parseDouble(jTablaNotas.getValueAt(jTablaNotas.getSelectedRow()  , 2).toString());
-        inscData.actualizarNota(selecAlumno.getIdAlumno(), selecID, selecNota);
+        inscData.actualizarNota(selecAlumno.getIdAlumno(), selecIDmateria, selecNota);
     }//GEN-LAST:event_jbGuardarNActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
