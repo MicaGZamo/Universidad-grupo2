@@ -89,8 +89,18 @@ public class FormularioNotas extends javax.swing.JInternalFrame {
         jScrollPane1.setViewportView(jTablaNotas);
 
         jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
+            }
+        });
 
         jbGuardarN.setText("Guardar");
+        jbGuardarN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbGuardarNActionPerformed(evt);
+            }
+        });
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,7 +138,7 @@ public class FormularioNotas extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(22, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jEscritorioNotas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
@@ -153,9 +163,21 @@ public class FormularioNotas extends javax.swing.JInternalFrame {
 
     private void jcbAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbAlumnosActionPerformed
         borrarFilaTabla();
+        cargarMateriasInscriptas();
         
         
     }//GEN-LAST:event_jcbAlumnosActionPerformed
+
+    private void jbGuardarNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarNActionPerformed
+        Alumno selecAlumno = (Alumno) jcbAlumnos.getSelectedItem();
+        int selecID= (int)jTablaNotas.getValueAt(jTablaNotas.getSelectedRow()  , 0);
+        double selecNota= Double.parseDouble(jTablaNotas.getValueAt(jTablaNotas.getSelectedRow()  , 2).toString());
+        inscData.actualizarNota(selecAlumno.getIdAlumno(), selecID, selecNota);
+    }//GEN-LAST:event_jbGuardarNActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+     dispose();
+    }//GEN-LAST:event_jbSalirActionPerformed
 private void armarCabeceraTabla() {
         ArrayList<Object> filaCabecera = new ArrayList<>();
         filaCabecera.add("ID");
@@ -179,13 +201,14 @@ private void armarCabeceraTabla() {
             
         }
   }
-     private void cargarAlumnosInscriptos(){
+     private void cargarMateriasInscriptas(){
         Alumno selec = (Alumno) jcbAlumnos.getSelectedItem();
-        List<Inscripcion> lista = inscData.listaInscripcion(selec.getIdAlumno());
+        List<Inscripcion> lista = inscData.listarInscripcionesPorAlumno(selec.getIdAlumno());
         
         for (Inscripcion i : lista) {
-            modelo.addRow(new Object[] {});
+            modelo.addRow(new Object[] {i.getMateria().getIdMateria(), i.getMateria().getNombre(), i.getNota()});
         }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
