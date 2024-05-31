@@ -122,6 +122,11 @@ public class Menu extends javax.swing.JFrame {
 
         jMSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/universidad/grupo2/RECURSOS/salir(16px).png"))); // NOI18N
         jMSalir.setText("Salir");
+        jMSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMSalirActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(jMSalir);
 
         setJMenuBar(jMenuBar1);
@@ -201,6 +206,10 @@ public class Menu extends javax.swing.JFrame {
         //materia.getContentPane().setBackground(new Color(68,167,132)); // Color de fondo del panel
         jDEscritorio.add(consulta); // agrega al escritorio al jdesktoppane
     }//GEN-LAST:event_jMConsultasActionPerformed
+
+    private void jMSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMSalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_jMSalirActionPerformed
 
     /**
      * @param args the command line arguments
